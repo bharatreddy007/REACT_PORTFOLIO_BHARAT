@@ -1,74 +1,62 @@
 import React, { useEffect, useState } from "react";
+import "../assets/css/Navbar.css"; // Keep the CSS import
 
 const Navbar = () => {
-  const [sticky, setSticky] = useState(false);
-  const [open, setOpen] = useState(false);
-  const menuLinks = [
-    { name: "HOME", link: "#home" },
-    { name: "ABOUT", link: "#about" },
-    { name: "SKILLS", link: "#skills" },
-    { name: "PROJECTS", link: "#projects" },
-    { name: "CONTACT", link: "#contact" },
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
+  
+  const navLinks = [
+    { label: "HOME", href: "#home" },
+    { label: "ABOUT", href: "#about" },
+    { label: "SKILLS", href: "#skills" },
+    { label: "WORK", href: "#work" },
+    { label: "CONTACT", href: "#contact" },
   ];
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
-      window.scrollY > 0 ? setSticky(true) : setSticky(false);
-    });
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener when component unmounts
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <nav
-      className={`fixed w-full left-0 top-0 z-[999] ${
-        sticky ? "bg-white/60  text-gray-900" : "text-white"
-      }`}
-    >
-      <div className="flex items-center justify-between">
-        <div className="mx-7">
-          <h4 className="text-4xl uppercase font-bold">
-            A<span className="text-cyan-600">le</span>x
-          </h4>
+    <header className={isScrolled ? "navbar header-scrolled" : "navbar"}>
+      <div className="nav-container">
+        {/* Brand Logo */}
+        <div className="brand-logo">
+          <span className="logo-highlight">SAI Bharat</span>
         </div>
-        <div
-          className={` ${
-            sticky ? "md:bg-white/0 bg-white" : "bg-white"
-          } text-gray-900 md:block hidden px-7 py-2 font-medium  rounded-bl-full`}
-        >
-          <ul className="flex items-center gap-1 py-2 text-lg">
-            {menuLinks?.map((menu, i) => (
-              <li key={i} className="px-6 hover:text-cyan-600">
-                <a href={menu?.link}>{menu?.name}</a>
+
+        {/* Navigation Links for Desktop */}
+        <nav className="desktop-nav">
+          <ul className="nav-links">
+            {navLinks.map((link, index) => (
+              <li key={index} className="nav-item">
+                <a href={link.href} className="nav-link">{link.label}</a>
               </li>
             ))}
           </ul>
+        </nav>
+
+        {/* Hamburger Menu for Mobile */}
+        <div className="hamburger-menu" onClick={() => setMenuVisible(!menuVisible)}>
+          <span className="menu-icon">{menuVisible ? "✖" : "☰"}</span>
         </div>
-        <div
-          onClick={() => setOpen(!open)}
-          className={`z-[999]  ${
-            open ? "text-gray-900" : "text-gray-100"
-          } text-3xl md:hidden m-5`}
-        >
-          <ion-icon name="menu"></ion-icon>
-        </div>
-        <div
-          className={`md:hidden text-gray-900 absolute w-2/3 h-screen
-      px-7 py-2 font-medium bg-white top-0 duration-300 ${
-        open ? "right-0" : "right-[-100%]"
-      }`}
-        >
-          <ul className="flex flex-col justify-center h-full gap-10 py-2 text-lg">
-            {menuLinks?.map((menu, i) => (
-              <li
-                onClick={() => setOpen(false)}
-                key={i}
-                className="px-6 hover:text-cyan-600"
-              >
-                <a href={menu?.link}>{menu?.name}</a>
+
+        {/* Mobile Slide-in Menu */}
+        <nav className={`mobile-nav ${menuVisible ? "active" : ""}`}>
+          <ul className="mobile-nav-links">
+            {navLinks.map((link, index) => (
+              <li key={index} className="mobile-nav-item" onClick={() => setMenuVisible(false)}>
+                <a href={link.href} className="mobile-nav-link">{link.label}</a>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 

@@ -1,41 +1,40 @@
 import React from "react";
-import hero from "../assets/images/hero.png";
+import hero from "../assets/images/bharat.jpeg";
+import "../assets/css/hero.css";
+
 const Hero = () => {
-  const social_media = [
-    "logo-instagram",
-    "logo-facebook",
-    "logo-linkedin",
-    "logo-twitter",
+  const socialMediaLinks = [
+    { icon: "logo-instagram", link: "https://www.instagram.com/bharat_reddy007/" },
+    { icon: "logo-facebook", link: "#" },
+    { icon: "logo-linkedin", link: "https://www.linkedin.com/in/sai-bharat-reddy-5446b0194/" },
+    { icon: "logo-twitter", link: "#" },
   ];
+
   return (
-    <section
-      id="home"
-      className="min-h-screen flex py-10 md:flex-row flex-col items-center"
-    >
-      <div className="flex-1 flex items-center justify-center h-full">
-        <img src={hero} alt="" className="md:w-11/12 h-full object-cover" />
-      </div>
-      <div className="flex-1">
-        <div className="md:text-left text-center">
-          <h1 className="md:text-5xl text-2xl md:leading-normal leading-10 text-white font-bold">
-            <span className="text-cyan-600 md:text-6xl text-5xl">
-              Hello!
-              <br />
-            </span>
-            My Name is <span>John Alex</span>
+    <section id="home" className="hero">
+      <div className="hero__content">
+        <div className="hero__image-wrapper">
+          <img src={hero} alt="Sai Bharat Reddy" className="hero__image" />
+        </div>
+        <div className="hero__text">
+          <h1 className="hero__title">
+            <span className="hero__greeting">Hey there!</span>
+            <br />
+            I'm <span className="hero__name">Sai Bharat Reddy</span>
           </h1>
-          <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
-            Fullstack Developer
-          </h4>
-          <button className="btn-primary mt-8">Contact Me</button>
-          <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
-            {social_media?.map((icon) => (
-              <div
-                key={icon}
-                className="text-gray-600 hover:text-white cursor-pointer "
+          <p className="hero__description">A Passionate Software Developer</p>
+          <button className="hero__button">Reach Out</button>
+          <div className="hero__social-media">
+            {socialMediaLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero__social-icon"
               >
-                <ion-icon name={icon}></ion-icon>
-              </div>
+                <ion-icon name={social.icon}></ion-icon>
+              </a>
             ))}
           </div>
         </div>

@@ -1,52 +1,71 @@
 import React from "react";
+import "../assets/css/skills.css"; // Ensure the correct CSS file is imported
 
-const Skills = () => {
-  const skills = [
+const Skillset = () => {
+  const skillData = [
     {
-      logo: "logo-html5",
-      level: "Advance",
-      count: 86,
+      icon: "code-slash-outline",
+      proficiency: "C Programming",
+      percentage: 85,
     },
     {
-      logo: "logo-css3",
-      level: "Expect",
-      count: 90,
+      icon: "logo-codepen-outline",
+      proficiency: "C++ Programming",
+      percentage: 80,
     },
     {
-      logo: "logo-nodejs",
-      level: "Beginner",
-      count: 40,
+      icon: "logo-java-outline",
+      proficiency: "Java",
+      percentage: 75,
     },
     {
-      logo: "logo-react",
-      level: "Intermediate",
-      count: 80,
+      icon: "logo-python",
+      proficiency: "Python",
+      percentage: 85,
+    },
+    {
+      icon: "server",
+      proficiency: "SQL Database",
+      percentage: 70,
+    },
+    {
+      icon: "logo-html5",
+      proficiency: "HTML",
+      percentage: 90,
+    },
+    {
+      icon: "logo-css3",
+      proficiency: "CSS",
+      percentage: 88,
+    },
+    {
+      icon: "logo-javascript",
+      proficiency: "JavaScript",
+      percentage: 80,
     },
   ];
+
   return (
-    <section id="skills" className="py-10 bg-gray-800 relative">
-      <div className="mt-8 text-gray-100 text-center">
-        <h3 className="text-4xl font-semibold">
-          My <span className="text-cyan-600">Skills</span>
+    <section id="skills-section">
+      <div className="skills-wrapper">
+        <h3>
+          Key <span>Competencies</span>
         </h3>
-        <p className="text-gray-400 mt-3 text-lg">My knowledge</p>
-        <div className="flex items-center justify-center mt-12 gap-10 flex-wrap">
-          {skills?.map((skill, i) => (
-            <div
-              key={i}
-              className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl"
-            >
+        <p>Technical Expertise</p>
+        <div className="skills-grid">
+          {skillData?.map((item, index) => (
+            <div key={index} className="skill-box">
               <div
+                className="progress-circle"
                 style={{
-                  background: `conic-gradient(rgb(8,145,170) ${skill.count}%,#ddd ${skill.count}%)`,
+                  background: `conic-gradient(rgb(8, 145, 170) ${item.percentage}%, #ddd ${item.percentage}%)`,
                 }}
-                className="w-32 h-32 flex items-center justify-center rounded-full"
               >
-                <div className="text-6xl w-28 h-28 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
-                  <ion-icon name={skill.logo}></ion-icon>
+                <div className="icon-container">
+                  <ion-icon name={item.icon}></ion-icon>
                 </div>
               </div>
-              <p className="text-xl mt-3">{skill.level}</p>
+              <p className="skill-text">{item.proficiency}</p>
             </div>
           ))}
         </div>
@@ -55,4 +74,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Skillset;

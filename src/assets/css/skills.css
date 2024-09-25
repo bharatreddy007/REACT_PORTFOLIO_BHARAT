@@ -1,0 +1,87 @@
+/* Skills Section */
+#skills-section {
+    padding: 80px 0;
+    background-color: #1a1a1d; /* Dark blackish background */
+    color: #e8e8e8; /* Light whitish text */
+    text-align: center;
+  }
+  
+  #skills-section h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  #skills-section span {
+    color: #00ff99; /* Greenish accent */
+  }
+  
+  #skills-section p {
+    color: #b8b8b8; /* Light gray for subheading text */
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Skills Wrapper */
+  .skills-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* Skills Grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  /* Skill Box */
+  .skill-box {
+    background-color: #242424; /* Slightly blackish background for the cards */
+    border-radius: 50%;
+    padding: 30px;
+    position: relative;
+    transition: all 0.4s ease;
+    text-align: center;
+  }
+  
+  .skill-box:hover {
+    transform: translateY(-10px);
+    background-color: #00ff99; /* Greenish hover effect */
+  }
+  
+  /* Progress Circle */
+  .progress-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-container {
+    font-size: 3rem;
+    color: #e8e8e8; /* White icons */
+    transition: color 0.3s ease;
+  }
+  
+  .skill-box:hover .icon-container {
+    color: #1a1a1d; /* Dark blackish when hovered */
+  }
+  
+  /* Skill Text */
+  .skill-text {
+    font-size: 1.25rem;
+    color: #e8e8e8; /* Light whitish text */
+    margin-top: 15px;
+  }
+  

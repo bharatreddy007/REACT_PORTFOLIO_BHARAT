@@ -1,0 +1,98 @@
+/* Projects Section */
+#projects {
+  padding: 80px 0;
+  background-color: #101820; /* Dark blackish background */
+  color: #ffffff;
+}
+
+#projects .project-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#projects .project-header h2 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#projects .project-header span {
+  color: #00ff99; /* Greenish accent */
+}
+
+#projects .project-header p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+}
+
+/* Project Gallery */
+.project-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Project Slider */
+.project-slider {
+  padding-bottom: 60px; /* Increased space for pagination dots */
+}
+
+/* Project Card */
+.project-card {
+  background-color: #1a1a2e; /* Darker shade for project card */
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Box shadow effect */
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-img {
+  opacity: 0.9;
+}
+
+/* Project Details */
+.project-details {
+  text-align: left;
+  padding-top: 10px;
+}
+
+.project-details h3 {
+  font-size: 1.5rem;
+  color: #00ff99; /* Greenish text color */
+  font-weight: 600;
+}
+
+.project-details p {
+  color: #b0b0b0;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.project-card:hover .project-details h3 {
+  color: #ffffff;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  background: #00ff99; /* Greenish pagination bullets */
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #ffffff; /* White when active */
+}

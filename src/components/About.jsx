@@ -1,54 +1,39 @@
 import React from "react";
-import aboutImg from "../assets/images/about.png";
+import aboutImg from "../assets/images/bharat.jpeg";
+import "../assets/css/about.css";  // Import the CSS
+
 const About = () => {
   const info = [
-    { text: "Years experience", count: "04" },
-    { text: "Completed Projects", count: "24" },
-    { text: "Companies Work", count: "06" },
+    { text: "Years of Experience", count: "01" },
+    { text: "Projects Delivered", count: "04" },
+    { text: "Organizations Contributed", count: "03" },
   ];
+
   return (
-    <section id="about" className="py-10 text-white">
-      <div className="text-center mt-8">
-        <h3 className="text-4xl font-semibold">
-          About <span className="text-cyan-600">Me</span>
-        </h3>
-        <p className="text-gray-400 my-3 text-lg">My introduction</p>
-        <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
-          <div className="p-2">
-            <div className="text-gray-300 my-3">
-              <p className="text-justify leading-7 w-11/12 mx-auto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                eos, quam vel quisquam, explicabo sit labore dignissimos optio
-                ratione quibusdam doloribus pariatur consequuntur sint.
-                Reprehenderit cupiditate possimus facere quasi voluptatem?
-              </p>
-              <div className="flex mt-10 items-center gap-7">
-                {info.map((content) => (
-                  <div key={content.text}>
-                    <h3 className="md:text-4xl text-2xl font-semibold text-white">
-                      {content.count}
-                      <span className="text-cyan-600">+</span>{" "}
-                    </h3>
-                    <span className="md:text-base text-xs">{content.text}</span>
-                  </div>
-                ))}
+    <section id="about" className="about-section">
+      <div className="about-wrapper">
+        {/* Image Section */}
+        <div className="about-image">
+          <img src={aboutImg} alt="Sai Bharat Reddy" className="about-portrait" />
+        </div>
+
+        {/* Information Section */}
+        <div className="about-details">
+          <h2 className="about-title">Who <span>I Am</span></h2>
+          <p className="about-description">
+            I am Sai Bharat Reddy, a dedicated Software Developer with an array of skills spanning multiple programming languages like C, C++, Java, Python, and SQL. I have successfully completed numerous projects, including a Farm Management System designed to aid farmers and an Automated Railway Crossing System focused on enhancing safety. I hold a Bachelor of Engineering in Computer Science from Nagarjuna College of Engineering, where I honed my skills further.
+          </p>
+          <div className="about-stats">
+            {info.map((item, index) => (
+              <div key={index} className="stat-item">
+                <h3>{item.count}<span>+</span></h3>
+                <p>{item.text}</p>
               </div>
-              <br />
-              <br />
-              <a href="./src/assets/Code_a_program.pdf" download>
-                <button className="btn-primary">Download CV</button>
-              </a>
-            </div>
+            ))}
           </div>
-          <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">
-            <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
-              <img
-                src={aboutImg}
-                alt=""
-                className="w-full object-cover bg-cyan-600 rounded-xl"
-              />
-            </div>
-          </div>
+          <a href="./src/assets/BharatReddy.pdf" download>
+            <button className="download-btn">Grab My CV</button>
+          </a>
         </div>
       </div>
     </section>
