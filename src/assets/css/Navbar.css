@@ -1,19 +1,21 @@
+
+
 /* Base Navbar Styling */
 .navbar {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background: transparent;
+  background: var(--navbar-bg-color);
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
   z-index: 1000;
-  padding: 15px 20px;
+  padding: var(--navbar-padding);
 }
 
 /* Sticky Navbar when scrolled */
 .header-scrolled {
-  background-color: #1a1a1a; /* Dark background */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: var(--navbar-scrolled-bg-color);
+  box-shadow: 0 4px 12px var(--navbar-box-shadow-color);
 }
 
 /* Nav container to align content */
@@ -29,16 +31,16 @@
 .brand-logo {
   font-size: 28px;
   font-weight: bold;
-  color: #fff;
+  color: var(--navbar-text-color);
 }
 
 .logo-highlight {
-  color: #00e676; /* Light green for contrast */
+  color: var(--navbar-highlight-color); /* Light green for contrast */
 }
 
 /* Desktop Navigation Links */
 .desktop-nav {
-  display: none;
+  display: none; /* Initially hidden for mobile, shown on larger screens */
 }
 
 .nav-links {
@@ -51,37 +53,65 @@
   position: relative;
 }
 
+/* Make sure nav items have the same padding, width, height */
 .nav-link {
-  font-size: 18px;
-  color: #fff;
+  font-size: var(--nav-link-font-size);
+  color: var(--navbar-text-color);
   text-decoration: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: var(--nav-link-padding);
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--nav-link-border-radius);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  width: var(--nav-link-width);
+  text-align: center;
 }
 
+/* Button-like hover effect with gradient */
 .nav-link:hover {
-  background-color: #00e676;
-  color: #000;
-  border-radius: 4px;
+  background: var(--nav-link-hover-bg-gradient);
+  color: var(--navbar-text-color);
+  border: 2px solid var(--nav-link-hover-border-color);
+  box-shadow: 0px 4px 10px var(--nav-link-hover-shadow-color);
+}
+
+/* Ensure the button hover effect fills the whole link area */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--nav-link-hover-overlay-color);
+  border-radius: var(--nav-link-border-radius);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
 }
 
 /* Mobile Hamburger Menu */
 .hamburger-menu {
-  font-size: 28px;
-  color: #fff;
+  font-size: var(--menu-icon-size);
+  color: var(--navbar-text-color);
   cursor: pointer;
   display: block;
 }
 
 .menu-icon {
-  font-size: 32px;
-  color: #fff;
+  font-size: var(--menu-icon-size);
+  color: var(--navbar-text-color);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .hamburger-menu:hover .menu-icon {
-  color: #00e676;
+  color: var(--navbar-highlight-color);
 }
 
 /* Mobile Navigation Menu */
@@ -90,8 +120,8 @@
   top: 0;
   right: -100%; /* Slide-out by default */
   height: 100vh;
-  width: 250px;
-  background-color: #222;
+  width: var(--mobile-nav-width);
+  background-color: var(--mobile-nav-bg-color);
   padding-top: 60px;
   transition: right 0.4s ease-in-out;
   z-index: 999;
@@ -101,6 +131,7 @@
   right: 0; /* Slide-in when active */
 }
 
+/* Mobile nav links styling */
 .mobile-nav-links {
   list-style: none;
   padding: 0;
@@ -111,27 +142,114 @@
   text-align: center;
 }
 
-
 .mobile-nav-link {
   font-size: 20px;
-  color: #fff;
-  padding: 15px 0;
+  color: var(--navbar-text-color);
+  padding: 15px 20px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  width: 100%; /* Ensure full-width for mobile */
+  box-sizing: border-box;
 }
 
 .mobile-nav-link:hover {
-  background-color: #00e676;
-  color: #000;
+  background: var(--nav-link-hover-bg-gradient);
+  color: var(--navbar-text-color);
+  border: 2px solid var(--nav-link-hover-border-color);
+  box-shadow: 0px 4px 10px var(--nav-link-hover-shadow-color);
 }
 
-/* Responsive Styling for larger screens */
-@media (min-width: 768px) {
+/* Responsive Styling */
+
+/* Tablet View: 768px to 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+  /* Hide desktop navigation on tablets */
   .desktop-nav {
-    display: block; /* Show links on desktop */
+    display: none;
   }
 
-  .hamburger-menu, .mobile-nav {
-    display: none; /* Hide hamburger and mobile nav */
+  /* Show hamburger menu on tablets */
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Adjust font size and spacing for better visibility */
+  .nav-link {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  /* Adjust the mobile menu size for tablet */
+  .mobile-nav {
+    width: 300px;
+  }
+
+  /* Ensure the logo and other elements are well-aligned */
+  .brand-logo {
+    font-size: 24px;
+  }
+
+  .mobile-nav-link {
+    font-size: 18px;
+  }
+}
+
+/* Phone View: Less than 768px */
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .mobile-nav {
+    width: 100%;
+    right: -100%;
+  }
+
+  .mobile-nav.active {
+    right: 0;
+  }
+
+  .mobile-nav-link {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+
+  .brand-logo {
+    font-size: 20px;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+}
+
+/* Small Phones: Less than 480px */
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .mobile-nav-link {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  .brand-logo {
+    font-size: 18px;
+  }
+
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .mobile-nav {
+    width: 100%;
   }
 }

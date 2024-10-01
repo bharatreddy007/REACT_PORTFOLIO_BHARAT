@@ -1,87 +1,117 @@
+
 /* Skills Section */
-#skills-section {
-    padding: 80px 0;
-    background-color: #1a1a1d; /* Dark blackish background */
-    color: #e8e8e8; /* Light whitish text */
-    text-align: center;
-  }
-  
-  #skills-section h3 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-  }
-  
-  #skills-section span {
-    color: #00ff99; /* Greenish accent */
-  }
-  
-  #skills-section p {
-    color: #b8b8b8; /* Light gray for subheading text */
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-  }
-  
-  /* Skills Wrapper */
-  .skills-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  /* Skills Grid */
+.skills-section {
+  padding: var(--skills-padding);
+  background-color: var(--skills-bg-color);
+  color: var(--skills-text-color);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px); /* Start off the screen */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animation when in view */
+.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Bring to normal position */
+}
+
+#skills-section h3 {
+  font-size: var(--skills-heading-font-size);
+  font-weight: 700;
+  color: var(--skills-heading-color);
+  letter-spacing: 1px;
+  margin-bottom: var(--skills-heading-margin-bottom);
+}
+
+#skills-section span {
+  color: var(--skills-accent-color); /* Greenish accent */
+}
+
+#skills-section p {
+  color: var(--skills-subheading-color); /* Light gray for subheading text */
+  font-size: var(--skills-subheading-font-size);
+  margin-bottom: var(--skills-subheading-margin-bottom);
+}
+
+/* Skills Wrapper */
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skills-grid-gap);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--skills-grid-gap);
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Skill Box */
+.skill-box {
+  background-color: var(--skill-box-bg-color);
+  border-radius: 50%;
+  padding: var(--skill-box-padding);
+  position: relative;
+  transition: all var(--skill-box-hover-transition) ease;
+  text-align: center;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+  background-color: var(--skill-box-hover-bg-color);
+}
+
+/* Progress Circle */
+.progress-circle {
+  width: var(--progress-circle-size);
+  height: var(--progress-circle-size);
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon Container */
+.icon-container {
+  font-size: var(--icon-font-size);
+  color: var(--icon-default-color); /* White icons */
+  transition: color var(--icon-hover-transition) ease;
+}
+
+.skill-box:hover .icon-container {
+  color: var(--icon-hover-color); /* Dark blackish when hovered */
+}
+
+/* Skill Text */
+.skill-text {
+  font-size: var(--skills-text-font-size);
+  color: var(--skills-text-color);
+  margin-top: var(--skill-text-margin-top);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid */
   }
-  
-  /* Skill Box */
-  .skill-box {
-    background-color: #242424; /* Slightly blackish background for the cards */
-    border-radius: 50%;
-    padding: 30px;
-    position: relative;
-    transition: all 0.4s ease;
-    text-align: center;
-  }
-  
-  .skill-box:hover {
-    transform: translateY(-10px);
-    background-color: #00ff99; /* Greenish hover effect */
-  }
-  
-  /* Progress Circle */
+
   .progress-circle {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: var(--progress-circle-mobile-size);
+    height: var(--progress-circle-mobile-size); /* Smaller circle */
   }
-  
+
   .icon-container {
-    font-size: 3rem;
-    color: #e8e8e8; /* White icons */
-    transition: color 0.3s ease;
+    font-size: var(--icon-hover-font-size); /* Smaller icon size */
   }
-  
-  .skill-box:hover .icon-container {
-    color: #1a1a1d; /* Dark blackish when hovered */
+
+  .skill-box {
+    padding: var(--skill-box-mobile-padding); /* Reduce padding for mobile */
   }
-  
-  /* Skill Text */
-  .skill-text {
-    font-size: 1.25rem;
-    color: #e8e8e8; /* Light whitish text */
-    margin-top: 15px;
-  }
-  
+}

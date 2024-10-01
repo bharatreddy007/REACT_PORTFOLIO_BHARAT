@@ -1,0 +1,351 @@
+/* Root Variables for Navbar Component */
+
+/* Dark Mode */
+:root {
+  /* Navbar Colors (Dark Mode) */
+  --navbar-bg-color: transparent; /* Initial navbar background */
+  --navbar-scrolled-bg-color: #1a1a1a; /* Dark background when scrolled */
+  --navbar-text-color: #ffffff; /* Text color for navbar */
+  --navbar-highlight-color: #00e676; /* Light green for logo highlight and hover */
+  --navbar-box-shadow-color: rgba(0, 0, 0, 0.3); /* Box shadow when scrolled */
+  
+  /* Navbar Sizing */
+  --navbar-padding: 15px 20px; /* Padding for the navbar */
+  --nav-link-font-size: 18px; /* Font size for nav links */
+  --nav-link-padding: 12px 25px; /* Padding for nav links */
+  --nav-link-border-radius: 5px; /* Border radius for nav links */
+  --nav-link-width: 150px; /* Fixed width for nav links */
+  
+  /* Navbar Transitions */
+  --nav-link-hover-bg-gradient: linear-gradient(90deg, #00e676, #00bfa5); /* Hover background gradient */
+  --nav-link-hover-border-color: #00bfa5; /* Border color when hovered */
+  --nav-link-hover-shadow-color: rgba(0, 0, 0, 0.2); /* Shadow color when hovered */
+  --nav-link-hover-overlay-color: rgba(0, 230, 118, 0.2); /* Overlay color for hover effect */
+  
+  /* Mobile Navbar */
+  --mobile-nav-bg-color: #222; /* Background color for mobile menu */
+  --menu-icon-size: 32px; /* Size for the mobile menu icon */
+  --mobile-nav-width: 250px; /* Width for the mobile nav */
+
+/* Root Variables for Hero Component */
+
+  /* Hero Colors */
+  --hero-bg-color: rgba(20, 20, 20, 0.85); /* Dark background with opacity */
+  --hero-bg-gradient: radial-gradient(circle, rgba(0, 255, 150, 0.3), transparent);
+  --hero-text-color: #ffffff; /* White text color */
+  --hero-title-color: #00e676; /* Light green title color */
+  --hero-greeting-color: #00bfa6; /* Green for the greeting */
+  --hero-description-color: #bbbbbb; /* Light grey for description */
+  --button-bg-color: #00e676; /* Button background color */
+  --button-hover-bg-color: #00c868; /* Button hover color */
+  --button-text-color: #000000; /* Button text color */
+  --hero-shadow-color: rgba(0, 255, 150, 0.3); /* Box shadow color for hero image */
+  --hero-icon-color: #aaaaaa; /* Color for social media icons */
+  --hero-icon-hover-color: #00e676; /* Color when hovering over social icons */
+  --hero-icon-shadow-hover: rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+
+  /* Hero Sizing */
+  --hero-title-font-size: 2.8rem; /* Title font size */
+  --hero-greeting-font-size: 3.2rem; /* Greeting font size */
+  --hero-description-font-size: 1.4rem; /* Description font size */
+  --button-padding: 12px 30px; /* Button padding */
+  --button-font-size: 1.1rem; /* Button font size */
+  --hero-icon-size: 2.5rem; /* Icon size */
+  --image-border-radius: 50px; /* Image border radius */
+  --hero-image-max-width: 400px; /* Maximum width of the hero image */
+  --hero-content-max-width: 1100px; /* Maximum width of the hero content */
+  
+  /* Hero Spacing */
+  --hero-content-gap-large: 50px; /* Gap between text and image for larger screens */
+  --hero-content-gap-small: 30px; /* Gap for smaller screens */
+  --hero-padding-top-bottom: 50px; /* Top and bottom padding */
+  --hero-social-media-gap: 20px; /* Gap between social media icons */
+  
+  /* Hero Animation */
+  --fade-in-duration: 1.5s; /* Duration for fade-in animation */
+
+
+/* Root Variables for About Component */
+
+  /* About Colors */
+  --about-bg-color: #181818; /* Dark background */
+  --about-text-color: #ffffff; /* White text */
+  --about-title-color: #00e676; /* Light green title */
+  --about-description-color: #bbbbbb; /* Light grey for description */
+  --about-shadow-color: rgba(0, 0, 0, 0.5); /* Shadow for background */
+  --about-portrait-shadow: rgba(0, 255, 150, 0.3); /* Shadow color for image */
+  --about-portrait-hover-shadow: rgba(0, 255, 150, 0.7); /* Shadow on hover */
+  --about-stats-number-color: #00e676; /* Color for stats numbers */
+  --download-btn-bg-color: #00e676; /* Button background color */
+  --download-btn-hover-bg-color: #00d466; /* Button hover color */
+  --download-btn-text-color: #222222; /* Button text color */
+
+  /* About Font Sizes */
+  --about-title-font-size: 2.5rem; /* Title font size */
+  --about-description-font-size: 1.1rem; /* Description font size */
+  --about-stats-number-font-size: 3rem; /* Font size for stats numbers */
+  --about-stats-text-font-size: 1.2rem; /* Font size for stats text */
+  --download-btn-font-size: 1rem; /* Font size for the button */
+
+  /* About Sizing */
+  --about-wrapper-max-width: 1100px; /* Max width for the wrapper */
+  --about-portrait-max-width: 450px; /* Max width for the portrait image */
+  --about-wrapper-gap: 40px; /* Gap between columns */
+  --download-btn-padding: 12px 30px; /* Button padding */
+  
+  /* About Spacing */
+  --about-padding: 100px 20px; /* Padding for about section */
+  --about-stats-margin-bottom: 30px; /* Margin bottom for stats */
+  --about-title-margin-bottom: 20px; /* Margin bottom for title */
+  --about-description-margin-bottom: 40px; /* Margin bottom for description */
+  
+  /* About Transition Durations */
+  --about-transition-duration: 1s; /* General transition duration */
+  --about-portrait-hover-transition: 0.7s; /* Transition for portrait hover */
+
+
+/* Root Variables for Skills Component */
+  /* Skills Colors */
+  --skills-bg-color: #1a1a1d; /* Dark blackish background */
+  --skills-text-color: #e8e8e8; /* Light whitish text */
+  --skills-heading-color: #ffffff; /* White for headings */
+  --skills-accent-color: #00ff99; /* Greenish accent */
+  --skills-subheading-color: #b8b8b8; /* Light gray for subheading */
+  --skill-box-bg-color: #242424; /* Slightly blackish background for skill boxes */
+  --skill-box-hover-bg-color: #00ff99; /* Greenish hover effect */
+  --icon-default-color: #e8e8e8; /* Default color for icons */
+  --icon-hover-color: #1a1a1d; /* Dark color on hover */
+
+  /* Skills Font Sizes */
+  --skills-heading-font-size: 2.8rem; /* Font size for main heading */
+  --skills-subheading-font-size: 1.2rem; /* Font size for subheading */
+  --skills-text-font-size: 1.25rem; /* Font size for skill text */
+  --icon-font-size: 3rem; /* Default icon size */
+  --icon-hover-font-size: 2.5rem; /* Icon size on smaller screens */
+
+  /* Skills Sizing */
+  --progress-circle-size: 120px; /* Default size for progress circles */
+  --progress-circle-mobile-size: 100px; /* Size for mobile */
+  --skill-box-padding: 30px; /* Padding inside skill boxes */
+  --skill-box-mobile-padding: 20px; /* Padding for mobile skill boxes */
+
+  /* Skills Spacing */
+  --skills-padding: 80px 0; /* Padding for the skills section */
+  --skills-heading-margin-bottom: 1rem; /* Margin below heading */
+  --skills-subheading-margin-bottom: 2.5rem; /* Margin below subheading */
+  --skills-grid-gap: 2rem; /* Gap between grid items */
+  --skill-text-margin-top: 15px; /* Margin above skill text */
+
+  /* Skills Transition Durations */
+  --skill-box-hover-transition: 0.4s; /* Transition duration for skill box hover */
+  --icon-hover-transition: 0.3s; /* Transition duration for icon hover */
+
+  /* Projects Colors */
+  --projects-bg-color: #101820; /* Dark background */
+  --projects-text-color: #ffffff; /* White text */
+  --projects-accent-color: #00ff99; /* Greenish accent */
+  --projects-subtext-color: #b0b0b0; /* Gray subtext */
+  --project-card-bg-color: #1a1a2e; /* Slightly blackish background for project cards */
+  --project-card-shadow-color: rgba(0, 255, 150, 0.3); /* Greenish shadow for project cards */
+  --project-hover-card-shadow-color: rgba(0, 0, 0, 0.5); /* Shadow when hovered */
+  --swiper-pagination-bullet-color: #00ff99; /* Greenish pagination bullet */
+  --swiper-pagination-bullet-active-color: #ffffff; /* White for active bullet */
+
+  /* Projects Font Sizes */
+  --project-header-font-size: 2.5rem; /* Font size for project section header */
+  --project-subheader-font-size: 1.2rem; /* Font size for project subheading */
+  --project-title-font-size: 1.5rem; /* Font size for project titles */
+  --project-text-font-size: 1rem; /* Font size for project details */
+
+  /* Projects Sizing */
+  --project-card-padding: 1rem; /* Padding inside project cards */
+  --project-card-mobile-padding: 1rem; /* Padding for mobile project cards */
+  --project-card-tablet-padding: 1.2rem; /* Padding for tablet project cards */
+  --project-card-min-height: 300px; /* Default minimum height for project cards */
+  --project-card-mobile-min-height: 320px; /* Minimum height for mobile */
+  --project-card-tablet-min-height: 350px; /* Minimum height for tablet */
+  
+  /* Projects Spacing */
+  --projects-padding: 80px 20px; /* Padding for the project section */
+  --project-header-margin-bottom: 50px; /* Margin below the project header */
+  --project-title-margin-top: 8px; /* Margin above project details */
+  --project-card-margin: 15px; /* Margin for project cards in tablet view */
+
+  /* Projects Transition Durations */
+  --project-hover-transition: 0.3s; /* Transition duration for hover effects */
+  --project-card-transition: 0.3s; /* Transition duration for project card */
+  /* Contact Colors */
+  --contact-bg-gradient: linear-gradient(135deg, #0d1117, #1c1f24); /* Gradient background */
+  --contact-text-color: #f4f4f4; /* Light text color */
+  --contact-header-color: #00ffa2; /* Greenish color for headers */
+  --contact-header-span-color: #00e5ff; /* Bluish tint for span */
+  --contact-subtext-color: #ccc; /* Light gray subtext */
+  --form-bg-color: #24292e; /* Dark background for form wrapper */
+  --form-input-bg-color: #2b3137; /* Darker background for form inputs */
+  --form-input-focus-border: #00ffa2; /* Greenish border on focus */
+  --btn-send-bg-color: #00ffa2; /* Button background color */
+  --btn-send-hover-bg-color: #00e5ff; /* Bluish hover effect */
+  --contact-item-bg-color: #24292e; /* Dark background for contact details */
+  --contact-item-hover-bg-color: #00ffa2; /* Greenish hover for contact items */
+  --icon-bg-color: #00e5ff; /* Bluish background for icons */
+  --icon-color: #000; /* Black for icon text */
+  
+  /* Contact Font Sizes */
+  --contact-header-font-size: 3rem; /* Header font size */
+  --contact-subheader-font-size: 1.2rem; /* Subheader font size */
+  --contact-details-font-size: 1.2rem; /* Font size for contact details */
+  --contact-details-font-size-lg: 1.5rem; /* Font size for contact details on larger screens */
+
+  /* Contact Sizing */
+  --form-padding: 20px; /* Padding for the form wrapper */
+  --input-padding: 15px; /* Padding for input fields */
+  --btn-padding: 15px; /* Padding for the send button */
+  --contact-item-padding: 20px; /* Padding for contact details items */
+  --icon-size: 60px; /* Size for icon wrappers */
+  
+  /* Border Radius */
+  --border-radius-lg: 16px; /* Large border radius */
+  --border-radius-md: 12px; /* Medium border radius */
+
+  /* Contact Spacing */
+  --contact-padding: 100px 20px; /* Padding for contact section */
+  --contact-header-margin-bottom: 20px; /* Margin below header */
+  --contact-content-gap: 50px; /* Gap between form and details */
+  --contact-item-gap: 20px; /* Gap inside contact items */
+
+  /* Contact Transition Durations */
+  --transition-duration: 0.3s; /* Transition duration for hover effects */
+
+/* Root Variables for Footer Component */
+
+  /* Footer Colors */
+  --footer-bg-color: #1a202c; /* Dark background */
+  --footer-text-color: #f4f4f4; /* Light text */
+  --footer-link-color: #f4f4f4; /* Link color */
+  --footer-link-hover-color: #00e5ff; /* Hover color for links */
+  --footer-heading-color: #00ff99; /* Greenish color for headings */
+  --footer-subtext-color: #a0aec0; /* Subtext color */
+  --footer-back-to-top-color: #00ff99; /* Greenish color for back to top */
+  --footer-back-to-top-hover-color: #00e5ff; /* Hover color for back to top */
+  --footer-border-color: #2d3748; /* Border color for footer bottom */
+  
+  /* Footer Font Sizes */
+  --footer-heading-font-size: 1.5rem; /* Font size for headings */
+  --footer-text-font-size: 1rem; /* Font size for regular text */
+  --footer-back-to-top-font-size: 1.2rem; /* Font size for back to top */
+  --footer-small-text-font-size: 0.9rem; /* Small text font size */
+
+  /* Footer Spacing */
+  --footer-padding: 40px 20px; /* Padding for the footer container */
+  --footer-gap: 2rem; /* Gap between sections */
+  --footer-section-margin-top: 2rem; /* Margin top for back-to-top section */
+  --footer-bottom-margin-top: 30px; /* Margin top for footer bottom */
+  --footer-bottom-padding-top: 20px; /* Padding top for footer bottom */
+  --footer-social-icon-gap: 20px; /* Gap between social icons */
+  
+  /* Footer Transition */
+  --footer-transition-duration: 0.3s; /* Transition duration */
+}
+
+/* //for light mode */
+/* Root Variables for Navbar Component */
+
+/* Light Mode */
+
+.light-mode {
+
+  /*for light mode */
+
+
+
+  /* Navbar Colors (Light Mode) */
+  --navbar-bg-color: #ffffff; /* Initial navbar background */
+  --navbar-scrolled-bg-color: #f8f9fa; /* Light background when scrolled */
+  --navbar-text-color: #000000; /* Text color for navbar */
+  --navbar-highlight-color: #00e676; /* Light green for logo highlight and hover */
+  --navbar-box-shadow-color: rgba(0, 0, 0, 0.1); /* Box shadow when scrolled
+  /* Navbar Sizing */
+  --navbar-padding: 15px 20px; /* Padding for the navbar */
+  --nav-link-font-size: 18px; /* Font size for nav links */
+  --nav-link-padding: 12px 25px; /* Padding for nav links */
+  --nav-link-border-radius: 5px; /* Border radius for nav links */
+  --nav-link-width: 150px; /* Fixed width for nav links */
+
+  
+
+  /* Navbar Transitions */
+  --nav-link-hover-bg-gradient: linear-gradient(90deg, #00e676, #00bfa5); /* Hover background gradient */
+  --nav-link-hover-border-color: #00bfa5; /* Border color when hovered */
+  --nav-link-hover-shadow-color: rgba(0, 0, 0, 0.2); /* Shadow color when hovered */
+  --nav-link-hover-overlay-color: rgba(0, 230, 118, 0.2); /* Overlay color for hover effect */
+
+  /* Mobile Navbar */
+  --mobile-nav-bg-color: #f8f9fa; /* Background color for mobile menu */
+  
+  /* Root Variables for Hero Component */
+
+  /* Hero Colors */
+  --hero-bg-color: rgba(255, 255, 255, 0.85); /* Light background with opacity */
+  --hero-bg-gradient: radial-gradient(circle, rgba(0, 255, 150, 0.3), transparent);
+  --hero-text-color: #000000; /* Black text color */
+  --hero-title-color: #00e676; /* Light green title color */
+  --hero-greeting-color: #00bfa6; /* Green for the greeting */
+  --hero-description-color: #777777; /* Light grey for description */
+  --button-bg-color: #00e676; /* Button background color */
+  --button-hover-bg-color: #00c868; /* Button hover color */
+  --button-text-color: #000000; /* Button text color */
+  --hero-shadow-color: rgba(0, 255, 150, 0.3); /* Box shadow color for hero image */
+  --hero-icon-color: #aaaaaa; /* Color for social media icons */
+  --hero-icon-hover-color: #00e676; /* Color when hovering over social icons */
+  --hero-icon-shadow-hover: rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+
+  /* Hero Sizing */
+  --hero-title-font-size: 2.8rem; /* Title font size */
+  --hero-greeting-font-size: 3.2rem; /* Greeting font size */
+  --hero-description-font-size: 1.4rem; /* Description font size */
+
+  /* Hero Spacing */
+  --hero-content-gap-large: 50px; /* Gap between text and image for larger screens */
+  --hero-content-gap-small: 30px; /* Gap for smaller screens */
+  --hero-padding-top-bottom: 50px; /* Top and bottom padding */
+  --hero-social-media-gap: 20px; /* Gap between social media icons */
+
+  /* Hero Animation */
+  --fade-in-duration: 1.5s; /* Duration for fade-in animation */
+  
+  /* Root Variables for About Component */
+
+  /* About Colors */
+  --about-bg-color: #f8f9fa; /* Light background */
+  --about-text-color: #000000; /* Black text */
+  --about-title-color: #00e676; /* Light green title */
+  --about-description-color: #777777; /* Light grey for description */
+  --about-shadow-color: rgba(0, 0, 0, 0.5); /* Shadow for background */
+
+
+  /* About Font Sizes */
+  --about-title-font-size: 2.5rem; /* Title font size */
+  --about-description-font-size: 1.1rem; /* Description font size */
+  --about-stats-number-font-size: 3rem; /* Font size for stats numbers */
+  --about-stats-text-font-size: 1.2rem; /* Font size for stats text */
+  --download-btn-font-size: 1rem; /* Font size for the button */
+
+  /* About Sizing */
+  --about-wrapper-max-width: 1100px; /* Max width for the wrapper */
+  --about-portrait-max-width: 450px; /* Max width for the portrait image */
+  --about-wrapper-gap: 40px; /* Gap between columns */
+  --download-btn-padding: 12px 30px; /* Button padding */
+  
+  /* About Spacing */
+  --about-padding: 100px 20px; /* Padding for about section */
+  --about-stats-margin-bottom: 30px; /* Margin bottom for stats */
+  --about-title-margin-bottom: 20px; /* Margin bottom for title */
+  --about-description-margin-bottom: 40px; /* Margin bottom for description */
+
+  /* About Transition Durations */
+  --about-transition-duration: 1s; /* General transition duration */
+  --about-portrait-hover-transition: 0.7s; /* Transition for portrait hover */
+
+  /* Root Variables for Skills Component */
+
+}

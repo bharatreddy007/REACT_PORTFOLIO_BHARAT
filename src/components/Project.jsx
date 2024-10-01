@@ -35,14 +35,17 @@ const Project = () => {
       </div>
       <div className="project-gallery">
         <Swiper
-          slidesPerView={1.5}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={20}
           breakpoints={{
+            640: {
+              slidesPerView: 1.5,
+            },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 3.5,
+              slidesPerView: 3,
             },
           }}
           loop={true}

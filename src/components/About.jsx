@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import aboutImg from "../assets/images/bharat.jpeg";
 import "../assets/css/about.css";  // Import the CSS
 
 const About = () => {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            observer.unobserve(entry.target); // Stop observing after animation
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
   const info = [
     { text: "Years of Experience", count: "01" },
     { text: "Projects Delivered", count: "04" },
@@ -10,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" ref={aboutRef}>
       <div className="about-wrapper">
         {/* Image Section */}
         <div className="about-image">

@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "../assets/css/skills.css"; // Ensure the correct CSS file is imported
 
 const Skillset = () => {
+  const skillsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            observer.unobserve(entry.target); // Stop observing after animation
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 10% of the section is visible
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, []);
+
   const skillData = [
     {
       icon: "code-slash-outline",
@@ -46,7 +72,7 @@ const Skillset = () => {
   ];
 
   return (
-    <section id="skills-section">
+    <section id="skills-section" ref={skillsRef} className="skills-section">
       <div className="skills-wrapper">
         <h3>
           Key <span>Competencies</span>

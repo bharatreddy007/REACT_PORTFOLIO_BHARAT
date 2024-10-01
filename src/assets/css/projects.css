@@ -1,29 +1,40 @@
+
+
 /* Projects Section */
-#projects {
-  padding: 80px 0;
-  background-color: #101820; /* Dark blackish background */
-  color: #ffffff;
+.projects-section {
+  padding: var(--projects-padding);
+  background-color: var(--projects-bg-color);
+  color: var(--projects-text-color);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animation when in view */
+.animate-slide-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #projects .project-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: var(--project-header-margin-bottom);
 }
 
 #projects .project-header h2 {
-  font-size: 2.8rem;
-  color: #ffffff;
+  font-size: var(--project-header-font-size);
+  color: var(--projects-text-color);
   font-weight: 700;
   margin-bottom: 15px;
 }
 
 #projects .project-header span {
-  color: #00ff99; /* Greenish accent */
+  color: var(--projects-accent-color);
 }
 
 #projects .project-header p {
-  font-size: 1.2rem;
-  color: #b0b0b0;
+  font-size: var(--project-subheader-font-size);
+  color: var(--projects-subtext-color);
 }
 
 /* Project Gallery */
@@ -34,30 +45,27 @@
   padding: 0 20px;
 }
 
-/* Project Slider */
-.project-slider {
-  padding-bottom: 60px; /* Increased space for pagination dots */
-}
-
 /* Project Card */
 .project-card {
-  background-color: #1a1a2e; /* Darker shade for project card */
+  background-color: var(--project-card-bg-color);
   border-radius: 12px;
-  padding: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: var(--project-card-padding);
+  transition: transform var(--project-hover-transition), box-shadow var(--project-hover-transition);
+  box-shadow: 5px 5px 16px var(--project-card-shadow-color);
   position: relative;
   overflow: hidden;
+  min-height: var(--project-card-min-height); /* Set a minimum height */
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Box shadow effect */
+  box-shadow: 0px 8px 20px var(--project-hover-card-shadow-color);
 }
 
 .project-img {
   width: 100%;
   border-radius: 10px;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--project-hover-transition);
 }
 
 .project-card:hover .project-img {
@@ -71,28 +79,74 @@
 }
 
 .project-details h3 {
-  font-size: 1.5rem;
-  color: #00ff99; /* Greenish text color */
+  font-size: var(--project-title-font-size);
+  color: var(--projects-accent-color);
   font-weight: 600;
 }
 
 .project-details p {
-  color: #b0b0b0;
-  font-size: 1rem;
-  margin-top: 8px;
+  color: var(--projects-subtext-color);
+  font-size: var(--project-text-font-size);
+  margin-top: var(--project-title-margin-top);
 }
 
 .project-card:hover .project-details h3 {
-  color: #ffffff;
+  color: var(--projects-text-color);
 }
 
 /* Swiper Pagination */
 .swiper-pagination-bullet {
-  background: #00ff99; /* Greenish pagination bullets */
+  background: var(--swiper-pagination-bullet-color);
   opacity: 0.6;
 }
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background-color: #ffffff; /* White when active */
+  background-color: var(--swiper-pagination-bullet-active-color);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .project-gallery {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-card {
+    padding: var(--project-card-mobile-padding);
+    margin: 10px;
+    min-height: var(--project-card-mobile-min-height); /* Adjust height for mobile */
+  }
+
+  .project-details h3 {
+    font-size: 1.3rem; /* Smaller font size for mobile */
+  }
+
+  .project-details p {
+    font-size: 0.9rem; /* Adjust description font size */
+  }
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .project-gallery {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-card {
+    padding: var(--project-card-tablet-padding);
+    margin: var(--project-card-margin);
+    min-height: var(--project-card-tablet-min-height);
+  }
+
+  .project-details h3 {
+    font-size: 1.4rem; /* Adjust font size for tablets */
+  }
+
+  .project-details p {
+    font-size: var(--project-text-font-size);
+  }
 }
