@@ -14,7 +14,19 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero__content">
         <div className="hero__image-wrapper">
-          <img src={hero} alt="Sai Bharat Reddy" className="hero__image" />
+          <img 
+            src={hero} 
+            alt="Sai Bharat Reddy" 
+            className="hero__image"
+            srcSet={`
+              ${hero} 600w, 
+              ${hero} 1200w, 
+              ${hero} 1800w
+            `}
+            sizes="(max-width: 600px) 100vw, 
+                   (max-width: 1200px) 50vw, 
+                   33vw"
+          />
         </div>
         <div className="hero__text">
           <h1 className="hero__title">

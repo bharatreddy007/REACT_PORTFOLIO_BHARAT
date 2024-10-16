@@ -1,5 +1,3 @@
-
-
 /* About Section */
 .about-section {
   background-color: var(--about-bg-color);
@@ -116,22 +114,22 @@
 
 /* Responsive Styling */
 
-/* Desktop View: Greater than 1024px */
-@media (min-width: 1025px) {
+/* Large Devices: Greater than 1200px */
+@media (min-width: 1201px) {
   .about-wrapper {
-    grid-template-columns: 1fr 1fr; /* Two-column layout for desktop */
+    grid-template-columns: 1fr 1fr; /* Two-column layout for large screens */
   }
 
   .about-portrait {
-    max-width: var(--about-portrait-max-width); /* Larger image for desktop */
+    max-width: var(--about-portrait-max-width); /* Larger image for large screens */
   }
 
   .about-title {
-    font-size: 2.8rem; /* Increase title size for desktop */
+    font-size: 2.8rem; /* Increase title size for large screens */
   }
 
   .about-description {
-    font-size: 1.2rem; /* Slightly larger text size */
+    font-size: 1.2rem; /* Larger text size */
   }
 
   .stat-item h3 {
@@ -139,51 +137,51 @@
   }
 }
 
-/* Tablet View: 768px to 1024px */
-@media (max-width: 1024px) and (min-width: 768px) {
+/* Medium Devices: 601px to 1200px */
+@media (min-width: 601px) and (max-width: 1200px) {
   .about-wrapper {
-    grid-template-columns: 1fr; /* Stack content vertically */
-    text-align: center; /* Center align the text */
-    padding: 40px; /* Adjust padding for smaller screens */
+    grid-template-columns: 1fr 1fr; /* Two-column layout for medium screens */
+    text-align: center;
+    padding: 40px; /* Adjust padding for medium screens */
   }
 
   .about-portrait {
-    max-width: 300px; /* Slightly smaller image size */
-    margin: 0 auto 30px auto; /* Center image with margin */
+    max-width: 300px; /* Adjust image size */
+    margin: 0 auto 30px auto; /* Center image */
   }
 
   .about-description {
-    font-size: 1rem; /* Decrease text size for better readability */
+    font-size: 1rem; /* Medium text size */
     line-height: 1.6; /* Adjust line spacing */
   }
 
   .about-title {
-    font-size: 2.2rem; /* Adjust title size for tablet */
+    font-size: 2.2rem; /* Adjust title size */
   }
 
   .stat-item h3 {
-    font-size: 2.5rem; /* Decrease stat number size */
+    font-size: 2.5rem; /* Adjust stat number size */
   }
 
   .stat-item p {
-    font-size: 1.1rem; /* Decrease stat description size */
+    font-size: 1.1rem; /* Adjust stat description size */
   }
 }
 
-/* Mobile View: Less than 768px */
-@media (max-width: 768px) {
+/* Mobile Devices: Up to 600px */
+@media (max-width: 600px) {
   .about-wrapper {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr; /* Single-column layout for mobile */
     padding: 20px; /* Less padding for mobile */
   }
 
   .about-portrait {
-    max-width: 250px; /* Reduce image size */
+    max-width: 250px; /* Smaller image size */
     margin: 0 auto 20px auto; /* Center image */
   }
 
   .about-description {
-    font-size: 0.9rem; /* Smaller text for mobile */
+    font-size: 0.9rem; /* Smaller text size */
     line-height: 1.5; /* Adjust line spacing */
   }
 
@@ -192,7 +190,7 @@
   }
 
   .stat-item h3 {
-    font-size: 2rem; /* Decrease number size */
+    font-size: 2rem; /* Decrease stat number size */
   }
 
   .stat-item p {
@@ -205,9 +203,9 @@
   }
 
   .download-btn {
-    width: 100%; /* Make the button full width */
+    width: 100%; /* Full-width button */
     padding: 10px 20px; /* Adjust padding */
-    font-size: 0.9rem; /* Slightly smaller button text */
+    font-size: 0.9rem; /* Smaller button text */
     margin-top: 20px;
   }
 }

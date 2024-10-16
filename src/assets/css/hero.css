@@ -1,5 +1,3 @@
-
-
 /* Hero Section */
 .hero {
   display: grid;
@@ -26,11 +24,75 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
   .hero__content {
     grid-template-columns: 1fr;
     text-align: center;
     gap: var(--hero-content-gap-small);
+  }
+
+  .hero__title {
+    font-size: 1.75rem; /* Smaller title font size for mobile */
+  }
+
+  .hero__description {
+    font-size: 1rem; /* Smaller description text for mobile */
+  }
+
+  .hero__button {
+    padding: 10px 20px; /* Smaller button padding for mobile */
+    font-size: 1rem; /* Smaller button text size */
+  }
+
+  .hero__social-media {
+    justify-content: center; /* Center social media icons on mobile */
+  }
+}
+
+/* Medium Devices (601px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .hero__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--hero-content-gap-medium);
+  }
+
+  .hero__title {
+    font-size: 2rem; /* Adjusted title size for medium screens */
+  }
+
+  .hero__description {
+    font-size: 1.125rem; /* Slightly larger description text for medium screens */
+  }
+
+  .hero__button {
+    padding: 12px 24px; /* Adjusted button padding */
+    font-size: 1.125rem; /* Adjusted button text size */
+  }
+}
+
+/* Large Devices (above 1200px) */
+@media (min-width: 1201px) {
+  .hero__content {
+    grid-template-columns: 1fr 1fr; /* Default for large screens */
+    gap: var(--hero-content-gap-large);
+  }
+
+  .hero__title {
+    font-size: var(--hero-title-font-size); /* Large title font size */
+  }
+
+  .hero__description {
+    font-size: var(--hero-description-font-size); /* Default description text size */
+  }
+
+  .hero__button {
+    padding: var(--button-padding); /* Default button padding */
+    font-size: var(--button-font-size); /* Default button text size */
+  }
+
+  .hero__social-media {
+    justify-content: flex-start; /* Align social media icons to the left for large screens */
   }
 }
 
@@ -120,12 +182,6 @@
 .hero__social-icon:hover {
   color: var(--hero-icon-hover-color);
   transform: scale(1.2);
-}
-
-@media (min-width: 768px) {
-  .hero__social-media {
-    justify-content: flex-start;
-  }
 }
 
 /* Keyframes for Fade-in Animation */

@@ -40,7 +40,19 @@ const About = () => {
       <div className="about-wrapper">
         {/* Image Section */}
         <div className="about-image">
-          <img src={aboutImg} alt="Sai Bharat Reddy" className="about-portrait" />
+          <img 
+            src={aboutImg} 
+            alt="Sai Bharat Reddy" 
+            className="about-portrait"
+            srcSet={`
+              ${aboutImg} 600w, 
+              ${aboutImg} 1200w, 
+              ${aboutImg} 1800w
+            `}
+            sizes="(max-width: 600px) 100vw, 
+                   (max-width: 1200px) 50vw, 
+                   33vw"
+          />
         </div>
 
         {/* Information Section */}

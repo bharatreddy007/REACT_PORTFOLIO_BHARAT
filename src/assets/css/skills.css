@@ -1,4 +1,3 @@
-
 /* Skills Section */
 .skills-section {
   padding: var(--skills-padding);
@@ -96,22 +95,63 @@
   margin-top: var(--skill-text-margin-top);
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
+/* Responsive Design for Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
   }
 
   .progress-circle {
     width: var(--progress-circle-mobile-size);
-    height: var(--progress-circle-mobile-size); /* Smaller circle */
+    height: var(--progress-circle-mobile-size); /* Smaller circle for mobile */
   }
 
   .icon-container {
-    font-size: var(--icon-hover-font-size); /* Smaller icon size */
+    font-size: var(--icon-hover-font-size); /* Smaller icon size for mobile */
   }
 
   .skill-box {
     padding: var(--skill-box-mobile-padding); /* Reduce padding for mobile */
+  }
+}
+
+/* Responsive Design for Medium Devices (601px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Adjust grid for medium screens */
+  }
+
+  .progress-circle {
+    width: var(--progress-circle-medium-size); /* Adjust circle size for medium screens */
+    height: var(--progress-circle-medium-size); /* Adjust circle size for medium screens */
+  }
+
+  .icon-container {
+    font-size: var(--icon-font-size); /* Default icon size */
+  }
+
+  .skill-box {
+    padding: var(--skill-box-padding); /* Default padding */
+  }
+}
+
+
+/* Responsive Design for Large Devices (above 1200px) */
+@media (min-width: 1201px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Default grid */
+  }
+
+  .progress-circle {
+    width: var(--progress-circle-size); /* Default circle size */
+    height: var(--progress-circle-size);
+  }
+
+  .icon-container {
+    font-size: var(--icon-font-size); /* Default icon size */
+  }
+
+  .skill-box {
+    padding: var(--skill-box-padding); /* Default padding */
   }
 }

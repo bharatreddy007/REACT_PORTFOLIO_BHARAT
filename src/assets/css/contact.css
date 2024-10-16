@@ -1,5 +1,3 @@
-
-
 /* Contact Section */
 #contact-section {
   padding: var(--contact-padding);
@@ -35,9 +33,66 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+  .contact-content {
+    flex-direction: column-reverse;
+    gap: 20px; /* Reduce the gap for mobile */
+  }
+
+  .contact-header h2 {
+    font-size: 1.5rem; /* Reduce font size */
+  }
+
+  .contact-header p {
+    font-size: 1rem; /* Adjust text size */
+  }
+
+  .btn-send {
+    padding: 10px 20px; /* Adjust padding for mobile */
+    width: 100%; /* Full-width button on mobile */
+  }
+}
+
+/* Medium Devices (601px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
   .contact-content {
     flex-direction: row;
+    gap: var(--contact-content-gap);
+  }
+
+  .contact-header h2 {
+    font-size: 2rem; /* Adjust font size for medium devices */
+  }
+
+  .contact-header p {
+    font-size: 1.125rem;
+  }
+
+  .btn-send {
+    padding: var(--btn-padding);
+    width: auto; /* Keep button auto-sized */
+  }
+}
+
+/* Large Devices (above 1200px) */
+@media (min-width: 1201px) {
+  .contact-content {
+    flex-direction: row;
+    gap: var(--contact-content-gap);
+  }
+
+  .contact-header h2 {
+    font-size: var(--contact-header-font-size);
+  }
+
+  .contact-header p {
+    font-size: var(--contact-subheader-font-size);
+  }
+
+  .btn-send {
+    padding: var(--btn-padding);
+    width: auto;
   }
 }
 

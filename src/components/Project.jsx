@@ -38,13 +38,13 @@ const Project = () => {
           slidesPerView={1}
           spaceBetween={20}
           breakpoints={{
-            640: {
+            600: {
               slidesPerView: 1.5,
             },
-            768: {
+            1200: {
               slidesPerView: 2,
             },
-            1024: {
+            1201: {
               slidesPerView: 3,
             },
           }}
@@ -61,7 +61,15 @@ const Project = () => {
           {projects.map((project, i) => (
             <SwiperSlide key={i}>
               <div className="project-card">
-                <img src={project.img} alt={project.name} className="project-img" />
+                <img
+                  src={project.img}
+                  srcSet={`${project.img} 400w, ${project.img} 800w, ${project.img} 1200w`}
+                  sizes="(max-width: 600px) 100vw, 
+                         (min-width: 601px) and (max-width: 1200px) 50vw, 
+                         (min-width: 1201px) 33vw"
+                  alt={project.name}
+                  className="project-img"
+                />
                 <div className="project-details">
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
