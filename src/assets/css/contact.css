@@ -195,3 +195,74 @@
     font-size: var(--contact-details-font-size-lg);
   }
 }
+
+
+/* Form Animation and Validation Styles */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form input.error,
+.contact-form textarea.error {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: var(--error-color);
+  font-size: 0.8rem;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+
+.form-status.success {
+  background-color: var(--success-bg-color);
+  color: var(--success-text-color);
+}
+
+.form-status.error {
+  background-color: var(--error-bg-color);
+  color: var(--error-text-color);
+}
+
+.btn-send.submitting {
+  background-color: var(--btn-disabled-bg-color);
+  cursor: not-allowed;
+}
+
+/* Loading Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Focus and Hover Effects */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .input-wrapper {
+    margin-bottom: 2rem;
+  }
+  
+  .error-message {
+    font-size: 0.75rem;
+  }
+}
